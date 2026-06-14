@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body { @apply bg-bgBase text-white font-sans antialiased; }
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-surface-3 rounded-full; }
+}
+
+@layer components {
+  .card        { @apply bg-surface border border-border rounded-xl p-5; }
+  .card-sm     { @apply bg-surface-2 border border-border rounded-lg p-4; }
+  .btn-primary { @apply bg-primary hover:bg-primary-dark text-white font-medium px-4 py-2 rounded-lg transition-colors text-sm; }
+  .btn-ghost   { @apply bg-surface-2 hover:bg-surface-3 border border-border text-slate-300 font-medium px-4 py-2 rounded-lg transition-colors text-sm; }
+  .btn-danger  { @apply bg-red-900/30 hover:bg-red-900/50 border border-red-700 text-red-400 font-medium px-4 py-2 rounded-lg transition-colors text-sm; }
+  .input       { @apply w-full bg-surface-2 border border-border rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 outline-none focus:border-primary transition-colors; }
+  .label       { @apply block text-xs font-medium text-slate-400 mb-1.5; }
+  .badge-blue  { @apply bg-primary-dim/50 text-primary-light border border-primary/30 text-xs font-semibold px-2.5 py-0.5 rounded-full; }
+  .badge-green { @apply bg-green-900/30 text-green-400 border border-green-700/40 text-xs font-semibold px-2.5 py-0.5 rounded-full; }
+  .badge-amber { @apply bg-amber-900/30 text-amber-400 border border-amber-700/40 text-xs font-semibold px-2.5 py-0.5 rounded-full; }
+  .badge-red   { @apply bg-red-900/30 text-red-400 border border-red-700/40 text-xs font-semibold px-2.5 py-0.5 rounded-full; }
+  .badge-teal  { @apply bg-teal-900/30 text-teal-400 border border-teal-700/40 text-xs font-semibold px-2.5 py-0.5 rounded-full; }
+  .badge-purple{ @apply bg-purple-900/30 text-purple-400 border border-purple-700/40 text-xs font-semibold px-2.5 py-0.5 rounded-full; }
+  .table-th    { @apply text-left px-4 py-2.5 text-xs text-slate-500 uppercase tracking-wide font-semibold border-b border-border; }
+  .table-td    { @apply px-4 py-3 text-sm text-slate-300 border-b border-border/50; }
+  .table-row   { @apply hover:bg-surface-2/60 transition-colors; }
+  .sidebar-item{ @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-400 hover:text-white hover:bg-surface-2 transition-all cursor-pointer mx-2; }
+  .sidebar-item.active { @apply bg-primary-dim/60 text-primary-light border border-primary/20; }
+}
