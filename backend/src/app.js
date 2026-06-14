@@ -31,6 +31,11 @@ app.use(morgan('combined', { stream: { write: msg => logger.info(msg.trim()) } }
 // Static files (uploads)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+// Root response for backend deployment checks
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', app: 'EvalSphere API', version: '1.0.0' });
+});
+
 // Routes
 app.use('/api/auth',       require('./routes/auth'));
 app.use('/api/events',     require('./routes/events'));
